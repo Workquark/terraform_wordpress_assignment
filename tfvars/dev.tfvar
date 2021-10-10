@@ -1,0 +1,34 @@
+app      = "WORDPRESS"
+# env      = "DEV"
+region   = "ap-south-1"
+
+tags = {
+  orgnization = "workquark"
+  Environment = "test"
+  GithubRepo  = "terraform-aws-eks"
+  GithubOrg   = "terraform-aws-modules"
+}
+
+vpc_cidr             = "10.100.0.0/16"
+public_subnets       = ["10.100.1.0/24"]
+private_subnets      = ["10.100.2.0/24", "10.100.3.0/24", "10.100.4.0/24"]
+database_subnets     = ["10.100.5.0/24", "10.100.6.0/24"]
+enable_nat_gateway   = true
+single_nat_gateway   = true
+enable_dns_hostnames = true
+
+ami_type = "AL2_x86_64"
+disk_size = 50
+desired_capacity = 2
+max_capacity = 10
+min_capacity = 2
+instance_types = ["t2.micro"]
+capacity_type ="ON_DEMAND"
+
+database = {
+    engine               = "mysql"
+    engine_version       = "8.0.20"
+    family               = "mysql8.0"
+    major_engine_version = "8.0"      
+    instance_class = "db.t3.medium"
+}

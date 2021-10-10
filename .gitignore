@@ -1,0 +1,5 @@
+.terraform
+*.csv
+*.hcl
+*MAC*
+kubeconfig*
