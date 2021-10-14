@@ -15,6 +15,7 @@ module "eks" {
 
   node_groups = {
     MANAGED_NODES_GROUP = {
+      name             = " ${upper(local.name)}-NODE-GROUP"
       subnets          = module.vpc.private_subnets
       desired_capacity = var.desired_capacity
       max_capacity     = var.max_capacity

@@ -1,4 +1,4 @@
-app      = "WORDPRESS"
+app      = "ARGOCD"
 # env      = "DEV"
 region   = "ap-south-1"
 

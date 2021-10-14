@@ -13,12 +13,12 @@ resource "random_string" "suffix" {
   special = false
 }
 
-module "rds" {
-  source                 = "./modules/rds"
-  name                   = local.name
-  database               = var.database
-  database_subnets       = module.vpc.database_subnets
-  vpc_security_group_ids = [module.main_sg.security_group_id]
-  tags                   = local.tags
-}
+# module "rds" {
+#   source                 = "./modules/rds"
+#   name                   = local.name
+#   database               = var.database
+#   database_subnets       = module.vpc.database_subnets
+#   vpc_security_group_ids = [module.main_sg.security_group_id]
+#   tags                   = local.tags
+# }
 
